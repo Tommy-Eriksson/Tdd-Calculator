@@ -3,3 +3,35 @@ Laboration 2 - Testdriven utveckling
 Ert mål för denna laboration är att utforma en kalkylator som kan hantera multiplikation, division, subtraktion, addition och modulus operationer. 
 
 Ni skall arbeta enligt TDD-metodik, alltså ni skall utforma ett brett antal tester för att säkerställa att er applikation fungerar tillfredställande. Ni kommer också behöva kasta ett antal olika exceptions vid tillfällen där ett tal är antingen för litet eller för stort som resulterar i en overflow efter kalkylering. Det skall också kastas ett exceptions vid tillfällen där något tal divideras med noll.
+
+
+Denna funktion skall ta emot en sträng med ett matematiskt uttryck och returnerar en sträng med rätt resultat. 
+Funktionen skall på denna nivå kunna klara att räkna ut obegränsat antal operander och operatorer ihop utan krav på parenteser. 
+
+Exempel på vad funktionen skall klara:
+5*4+7-3*0+4-10 
+7*4+6-3/2
+Exempel på vad funktionen inte behöver klara
+
+5 - -5
+5+(6*7)
+
+Ni måste här tänka på att prioritet på operatorerna går från vänster och * / och % har högre prioritet, alltså:
+7*6/2 = 21
+5+6/2*2 = 11 
+
+Ni skall kasta en ArithmeticException ur funktionen calculateExpression om ett tal divideras med noll. Detta skall testas med expectedExceptions. 
+
+Det skall kastas lämpliga exceptions ur calculateExpression vid ett overflow, alltså där två för stora tal adderas ihop och resulterar ett tal för stort för att kunna hanteras av datatypen double.
+Det skall kastas exceptions eller resultera i ett felmeddelande om input är felaktigt. 
+En felaktig input kan t.ex. vara flera operatorer ihop i följd, bokstäver, för många mellanrum(space) mellan operanderna osv. 
+Ni skall genom tester fånga upp tillfredställande antal fel. Med det menas att det inte finns några krav på att fånga upp alla fel. Testerna skall visa att funktionen calculateExpression svarar allmänt tillfredställande vid felaktiga inputs. Det är fortfarande okej att exempelvis inte klara uttryck som 3—1 eller 10—1; men detta får gärna implementeras.
+Exempel på felaktiga inputs:
+5++p
+5++4
+3    4
+sdf
+*3
+0+0//
+osv...
+Allt ovan skall bevisas genom tester och det är viktigt att ni testar gränsvärden och udda värden. 
