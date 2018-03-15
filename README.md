@@ -1,8 +1,5 @@
 <H1>YH utbildning systemintegratör</h1>
 <a href="https://www.lernia.se/utbildning/yrkeshogskoleutbildning/systemintegrator/">Lernia systemintegratör</a>
-
-<h5>Andra uppgiften i den inledande kursen Java. </h5>
-
 <br />
 <br />
 <h3>Testdriven utveckling</h3>
